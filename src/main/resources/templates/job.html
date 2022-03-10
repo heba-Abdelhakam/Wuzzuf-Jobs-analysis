@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>WUZZUF Analysis Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/Tables.css" th:href="@{/css/Tables.css}" rel="stylesheet" />
+</head>
+<body>
+<h1>First records from Wuzzuf Dataset at kaggle</h1>
+<table class="content-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Level</th>
+            <th>YearsExp</th>
+            <th>Country</th>
+            <th>Skills</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="job : ${jobs}" class="active-row">
+        <td th:text="${job.title}"></td>
+        <td th:text="${job.company}"></td>
+        <td th:text="${job.location}"></td>
+        <td th:text="${job.type}"></td>
+        <td th:text="${job.level}"></td>
+        <td th:text="${job.yearsExp}"></td>
+        <td th:text="${job.country}"></td>
+        <td th:text="${job.skills}"></td>
+    </tr>
+    </tbody>
+</table>
+<div class="button">
+    <button class="button2" onclick="location.href='http://localhost:8080/index'">Menu</button>
+</div>
+</body>
+</html>

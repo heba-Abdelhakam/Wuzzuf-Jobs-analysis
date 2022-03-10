@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>WUZZUF Analysis Project</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="../static/css/Tables.css" th:href="@{/css/Tables.css}" rel="stylesheet" />
+</head>
+
+<body>
+<h1>Schema of dataset</h1>
+<table class="content-table">
+  <thead>
+  <tr>
+          <th>Column_name</th>
+          <th>Type</th>
+          <th>Nullable</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr  >
+      <tr th:each="s,iterstat : ${schema}" class="active-row">
+        <td th:text="${s.name()}"></td>
+        <td th:text="${s.dataType()}"></td>
+        <td th:text="${s.nullable()}"></td>
+      </tr>
+      </tbody>
+</table>
+<div class="button">
+  <button class="button2" onclick="location.href='http://localhost:8080/index'">Menu</button>
+</div>
+</body>
+</html>

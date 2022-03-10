@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>WUZZUF Analysis Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/Tables.css" th:href="@{/css/Tables.css}" rel="stylesheet" />
+</head>
+<body>
+<h1>Summary of Wuzzuf Dataset</h1>
+<table class="content-table">
+    <thead>
+    <tr>
+        <th>Statistics</th>
+        <th>Title</th>
+        <th>Company</th>
+        <th>Location</th>
+        <th>Type</th>
+        <th>Level</th>
+        <th>YearsExp</th>
+        <th>Country</th>
+        <th>Skills</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="s : ${summary}" class="active-row">
+        <td th:text="${s.get(0).substring(1)}"></td>
+        <td th:text="${s.get(1)}"></td>
+        <td th:text="${s.get(2)}"></td>
+        <td th:text="${s.get(3)}"></td>
+        <td th:text="${s.get(4)}"></td>
+        <td th:text="${s.get(5)}"></td>
+        <td th:text="${s.get(6)}"></td>
+        <td th:text="${s.get(7)}"></td>
+        <td th:text="${s.get(8)}"></td>
+    </tr>
+    </tbody>
+</table>
+<div class="button">
+    <button class="button2" onclick="location.href='http://localhost:8080/index'">Menu</button>
+</div>
+</body>
+</html>

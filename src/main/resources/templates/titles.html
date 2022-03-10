@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>WUZZUF Analysis Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/Tables.css" th:href="@{/css/Tables.css}" rel="stylesheet" />
+
+</head>
+<body>
+<h1 id="title">The most popular job titles</h1>
+<table class="content-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Count</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="title : ${titles}" class="active-row">
+        <td th:text="${title.get(1)}"></td>
+        <td th:text="${title.get(0)}"></td>
+    </tr>
+
+    </tbody>
+</table>
+<div class="button">
+    <button class="button2" onclick="location.href='http://localhost:8080/index'">Menu</button>
+</div>
+</body>
+</html>
